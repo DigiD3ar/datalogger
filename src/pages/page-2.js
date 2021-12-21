@@ -4,13 +4,18 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
-const SecondPage = () => (
-  <Layout>
+const SecondPage = () => {
+ //agregar sidepanel con nombre de usuario y boton de logout
+ // lista con archivos, Nombre de archivo y fecha de subida
+ // debajo de la lista un campo donde añadir mas archivos con boton de subida
+
+
+  return(
+ <Layout>
     <Seo title="Page two" />
-    <h1>perfil y subida de files</h1>
-    <p>Welcome to page 2</p>
-    <Link to="/">Go back to the homepage</Link>
-  </Layout>
-)
+    <h1>Panel</h1>
+    
+  </Layout>)
+}
 
 export default SecondPage

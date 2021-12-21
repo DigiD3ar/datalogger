@@ -1,22 +1,37 @@
 import * as React from "react"
 import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
-import Seo from "../components/seo"
+import Seo from "../components/seo" 
+import "../css/style.css"
 
-const IndexPage = () => (
+
+const IndexPage = () =>{
+
+  const [valor, setValor] = React.useState(true)
+  const cambioValor = () => setValor(!valor)
+
+  return(
   <Layout>
     <Seo title="Home" />
-    <h1>Login</h1>
-
-    <p>
-      <Link to="/page-2/">Go to page 2</Link> <br />
-      <Link to="/using-typescript/">Go to "Using TypeScript"</Link> <br />
-      <Link to="/using-ssr">Go to "Using SSR"</Link> <br />
-      <Link to="/using-dsg">Go to "Using DSG"</Link>
-    </p>
+    <div class="login-page">
+      <div class="form">
+        <div class="login">
+          <div class="login-header">
+            <h3>LOGIN</h3>
+            <p>Inicia sesión.</p>
+          </div>
+        </div>
+        <form class="login-form">
+          <input type="text" placeholder="Usuario"/>
+          <input type="password" placeholder="Contraseña"/>
+          <Link to="/page-2/"><button>Iniciar</button></Link>
+          <p class="message">No estoy registrado? <a href="#">Crer una cuenta?</a></p>
+        </form>
+      </div>
+    </div>
   </Layout>
-)
+  )
+}
 
 export default IndexPage
